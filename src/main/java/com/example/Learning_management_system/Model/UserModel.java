@@ -16,13 +16,25 @@ import java.util.List;
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer userId;
 
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "role")
     private String role; // "admin", "instructor", "student"
+
+    @Column(name = "profile_picture")
     private String profilePicture;
+
+    @Column(name = "bio")
     private String bio;
 
     @OneToMany(mappedBy = "instructor")
